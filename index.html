@@ -15,41 +15,78 @@
         </header>
         <main>
             <section class="profile">
-                <div class="profile__Avatar"></div>
-                <div class="profile-info">
-                    <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-                    <p class="profile-info__subtitle">Исследователь океана</p>
-                    <div class="profile-info__Edit-button"></div>
+                <div class="profile__items">
+                    <div class="profile__Avatar">
+                        <div class="profile__Avatar-images"></div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-info__title-group">
+                            <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+                            <button class="profile-info__Edit-button" onclick="openForm()">
+                                <div class="profile-info__images"></div>
+                            </button>
+                            <div class="popup" id="myForm">
+                                <form action="#" class="popup__container">
+                                  <h2 class="popup__container-title">Редактировать профиль</h2>
+                                  <input class="popup__container-input" type="text" name="name" required>
+                                  <input class="popup__container-input" type="text" name="aboutYou" required>
+                                  <button class="popup__container-save" type="submit">Сохранить</button>
+                                  <button class="popup__container-close" type="button" onclick="closeForm()">
+                                    <div class="popup__container-close-image"></div>
+                                  </button>
+                                </form>
+                              </div>
+                        </div>
+                        <p class="profile-info__subtitle">Исследователь океана</p>                        
+                    </div>
                 </div>
-                <div class="profile__add-button"></div>
+                <div class="profile__add-button">
+                    <div class="profile__add-button-images"></div>
+                </div>
             </section>
             <section class="elements">
-                <ul>
-                    <li class="element">
-                        <img class="element__image" src="./images/Карачевск.png" alt="Пейзаж Карачаевска">
+                <div class="element">
+                    <img class="element__image" src="./images/Карачевск.png" alt="Пейзаж Карачаевска">
+                    <div class="element__group-title">
                         <p class="element__title">Карачаевск</p>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/Эльбрус.png" alt="Пейзаж Расвет Эльбрус">
+                        <div class="element__group-title-images"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/Эльбрус.png" alt="Пейзаж Расвет Эльбрус">
+                    <div class="element__group-title">
                         <p class="element__title">Гора Эльбрус</p>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/Домбай.png" alt="Пейзаж горы Домбай">
+                        <div class="element__group-title-images"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/Домбай.png" alt="Пейзаж горы Домбай">
+                    <div class="element__group-title">
                         <p class="element__title">Домбай</p>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/Эльбрус.png" alt="Пейзаж Расвет Эльбрус">
+                        <div class="element__group-title-images"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/Эльбрус.png" alt="Пейзаж Расвет Эльбрус">
+                    <div class="element__group-title">
                         <p class="element__title">Гора Эльбрус</p>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/Домбай.png" alt="Пейзаж горы Домбай">
+                        <div class="element__group-title-images"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/Домбай.png" alt="Пейзаж горы Домбай">
+                    <div class="element__group-title">
                         <p class="element__title">Домбай</p>
-                    </li>
-                    <li class="element">
-                        <img class="element__image" src="./images/Карачевск.png" alt="Пейзаж Карачаевска">
-                        <p class="element__title">Карачаевск</p>
-                    </li>
-                </ul>
+                        <div class="element__group-title-images"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/Карачевск.png" alt="Пейзаж Карачаевска">
+                    <div class="element__group-title">
+                        <p class="element__title">Карачаево-Черкесия</p>
+                        <div class="element__group-title-images"></div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer class="footer">
@@ -57,6 +94,6 @@
         </footer>
     
     </div>
+    <script src="./vendor/script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,10 @@
+.element__group-title {
+    margin: 0 ;
+    padding: 21px;
+    max-width: 282px;
+    max-height: 23px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

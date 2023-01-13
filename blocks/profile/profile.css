@@ -5,3 +5,10 @@
     display: flex;
     justify-content: space-between;
 }
+@media (max-width: 600px) {
+    .profile {
+        max-width: 88.125%;
+        padding: 42px 0 0 0;
+        flex-direction: column;
+    }
+}

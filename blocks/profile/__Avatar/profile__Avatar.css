@@ -1,9 +1,10 @@
 .profile__Avatar {
-    margin: 0;
-    padding: 0;
-    background-image: url('../../../images/Avatar.svg');
-    border-radius: 100%;
-    min-width: 120px;
-    height: 120px;
-
+margin: 0;
+padding: 0 30px 0 0;
+}
+@media (max-width: 600px) {
+    .profile__Avatar {
+        margin: 0 auto;
+        padding: 0 0 22px 0;
+    }
 }

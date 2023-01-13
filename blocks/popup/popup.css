@@ -1,0 +1,6 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 195px;
+    margin: 0 auto;
+}

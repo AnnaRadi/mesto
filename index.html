@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./pages/index.css">
 </head>
 
-<body>
+<body class="body">
     <div class="page">
         <header class="header">
             <div class="header__logo"></div>
@@ -22,20 +22,9 @@
                     <div class="profile-info">
                         <div class="profile-info__title-group">
                             <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-                            <button class="profile-info__Edit-button" onclick="openForm()">
+                            <button class="profile-info__Edit-button">
                                 <div class="profile-info__images"></div>
                             </button>
-                            <div class="popup" id="myForm">
-                                <form action="#" class="popup__container">
-                                  <h2 class="popup__container-title">Редактировать профиль</h2>
-                                  <input class="popup__container-input" type="text" name="name" required>
-                                  <input class="popup__container-input" type="text" name="aboutYou" required>
-                                  <button class="popup__container-save" type="submit">Сохранить</button>
-                                  <button class="popup__container-close" type="button" onclick="closeForm()">
-                                    <div class="popup__container-close-image"></div>
-                                  </button>
-                                </form>
-                              </div>
                         </div>
                         <p class="profile-info__subtitle">Исследователь океана</p>                        
                     </div>
@@ -93,6 +82,17 @@
             <p class="footer__text">&copy; 2020 Mesto Russia</p>
         </footer>
     
+    </div>
+    <div class="popup popup_opened">
+        <form class="popup__container">
+          <h2 class="popup__container-title">Редактировать профиль</h2>
+          <input class="popup__container-input" type="text">
+          <input class="popup__container-input" type="text">
+          <button class="popup__container-save" type="submit">Сохранить</button>
+          <button class="popup__container-close" type="button">
+            <div class="popup__container-close-image"></div>
+          </button>
+        </form>
     </div>
     <script src="./vendor/script.js"></script>
 </body>

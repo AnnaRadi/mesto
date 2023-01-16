@@ -3,12 +3,14 @@
     flex-direction: row;
     align-items: flex-end;
     padding: 22px 0 8px 0;
-    justify-content: center;
+    justify-content: space-between;
+    max-width: 366px;
 }
 @media (max-width: 600px) {
     .profile-info__title-group {
-        width: 282px;
+        max-width: 282px;
         margin: 0 auto;
         padding: 0 0 12px 0;
+        justify-content: center;
     }
 }

@@ -1,4 +1,9 @@
 .popup__container-input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
     width: 358px;
     height:30px;
     padding:0;
@@ -12,11 +17,6 @@
 .popup__container-input:active, :focus {
     border: 2px solid #1faee9;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
 }
 
 @media (max-width: 600px) {

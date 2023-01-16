@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesto</title>
+    <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css">
 </head>
 
@@ -16,75 +16,75 @@
         <main>
             <section class="profile">
                 <div class="profile__items">
-                    <div class="profile__Avatar">
-                        <div class="profile__Avatar-images"></div>
+                    <div class="profile__avatar">
+                        <div class="profile__avatar-images"></div>
                     </div>
                     <div class="profile-info">
                         <div class="profile-info__title-group">
                             <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-                            <button class="profile-info__Edit-button">
+                            <button class="profile-info__edit-button" type="button">
                                 <img src="./images/Vector.svg" class="profile-info__images" alt="Редактировать">
                             </button>
                         </div>
                         <p class="profile-info__subtitle">Исследователь океана</p>                        
                     </div>
                 </div>
-                <button class="profile__add-button">
+                <button class="profile__add-button" type="button">
                     <img src="./images/Vector_(1).svg" class="profile__add-button-images" alt="Добавить">
                 </button>
             </section>
             <section class="elements">
                 <div class="element">
-                    <img class="element__image" src="./images/Карачевск.png" alt="Пейзаж Карачаевска">
+                    <img class="element__image" src="./images/Карачевск.png" alt="Сентинский храм Карачаевск">
                     <div class="element__group-title">
-                        <p class="element__title">Карачаевск</p>
-                        <button class="element__group-title-like">
-                            <img src="./images/Vector_(Stroke).png" class="element__group-title-images" alt="Нравится">
+                        <h2 class="element__title">Карачаевск</h2>
+                        <button class="element__group-title-like" type="button">
+                            <img src="./images/Vector__Stroke.svg" class="element__group-title-images" alt="Нравится">
                         </button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Эльбрус.png" alt="Пейзаж Расвет Эльбрус">
                     <div class="element__group-title">
-                        <p class="element__title">Гора Эльбрус</p>
-                        <button class="element__group-title-like">
-                            <img src="./images/Vector_(Stroke).png" class="element__group-title-images" alt="Нравится">
+                        <h2 class="element__title">Гора Эльбрус</h2>
+                        <button class="element__group-title-like" type="button">
+                            <img src="./images/Vector__Stroke.svg" class="element__group-title-images" alt="Нравится">
                         </button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Домбай.png" alt="Пейзаж горы Домбай">
                     <div class="element__group-title">
-                        <p class="element__title">Домбай</p>
-                        <button class="element__group-title-like">
-                            <img src="./images/Vector_(Stroke).png" class="element__group-title-images" alt="Нравится">
+                        <h2 class="element__title">Домбай</h2>
+                        <button class="element__group-title-like" type="button">
+                            <img src="./images/Vector__Stroke.svg" class="element__group-title-images" alt="Нравится">
                         </button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Эльбрус.png" alt="Пейзаж Расвет Эльбрус">
                     <div class="element__group-title">
-                        <p class="element__title">Гора Эльбрус</p>
-                        <button class="element__group-title-like">
-                            <img src="./images/Vector_(Stroke).png" class="element__group-title-images" alt="Нравится">
+                        <h2 class="element__title">Гора Эльбрус</h2>
+                        <button class="element__group-title-like" type="button">
+                            <img src="./images/Vector__Stroke.svg" class="element__group-title-images" alt="Нравится">
                         </button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__image" src="./images/Домбай.png" alt="Пейзаж горы Домбай">
                     <div class="element__group-title">
-                        <p class="element__title">Домбай</p>
-                        <button class="element__group-title-like">
-                            <img src="./images/Vector_(Stroke).png" class="element__group-title-images" alt="Нравится">
+                        <h2 class="element__title">Домбай</h2>
+                        <button class="element__group-title-like" type="button">
+                            <img src="./images/Vector__Stroke.svg" class="element__group-title-images" alt="Нравится">
                         </button>
                     </div>
                 </div>
                 <div class="element">
-                    <img class="element__image" src="./images/Карачевск.png" alt="Пейзаж Карачаевска">
+                    <img class="element__image" src="./images/Карачевск.png" alt="Сентинский храм Карачаевск">
                     <div class="element__group-title">
-                        <p class="element__title">Карачаево-Черкесия</p>
-                        <button class="element__group-title-like">
-                            <img src="./images/Vector_(Stroke).png" class="element__group-title-images" alt="Нравится">
+                        <h2 class="element__title">Карачаево-Черкесия</h2>
+                        <button class="element__group-title-like" type="button">
+                            <img src="./images/Vector__Stroke.svg" class="element__group-title-images" alt="Нравится">
                         </button>
                     </div>
                 </div>
@@ -95,17 +95,19 @@
         </footer>
     
     </div>
-    <div class="popup popup_opened">
-        <form class="popup__container">
-          <h2 class="popup__container-title">Редактировать профиль</h2>
-          <input class="popup__container-input container-input-Name" type="text" id="nameInput">
-          <input class="popup__container-input container-input-aboutYou" type="text" id="jobInput">
-          <button class="popup__container-save" type="submit">Сохранить</button>
-          <button class="popup__container-close" type="button">
-            <img src="./images/Close_Icon.png" class="popup__container-close-image" alt="Закрыть">
-          </button>
-        </form>
+    <div class="popup">
+        <div class="popup__container">
+        <h2 class="popup__container-title">Редактировать профиль</h2>
+            <form class="form" name="form">
+                <input class="popup__container-input popup__container-input_name" type="text" id="nameInput" name="nameInput">
+                <input class="popup__container-input popup__container-input_aboutyou" type="text" id="jobInput" name="jobInput">
+                <button class="popup__container-save" type="submit">Сохранить</button>
+            </form>
+        <button class="popup__container-close" type="button">
+            <img src="./images/Close_Icon.svg" class="popup__container-close-image" alt="Закрыть">
+        </button>
+        </div>
     </div>
-    <script src="./vendor/script.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

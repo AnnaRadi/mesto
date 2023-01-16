@@ -19,8 +19,8 @@ function CloseForm() {
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__container'); // Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
-let nameInput = document.querySelector('.container-input_Name');// Воспользуйтесь инструментом .querySelector()
-let jobInput = document.querySelector('.container-input_aboutYou')// Воспользуйтесь инструментом .querySelector()
+let nameInput = document.querySelector('.container-input-Name');// Воспользуйтесь инструментом .querySelector()
+let jobInput = document.querySelector('.container-input-aboutYou')// Воспользуйтесь инструментом .querySelector()
 
 let container_save = document.querySelector('.popup__container-save');
 container_save.addEventListener("click",handleFormSubmit);

@@ -16,6 +16,7 @@
 Картинки бфыли оптимизированы с помощью программы (https://tinypng.com/),сделано для того,  чтобы сайт загружался быстрее.
 
 **GitHub Pages**
+
 * [Ссылка на страницу GitHub](https://github.com/AnnaRadi/)
 
 * [Ссылка на Проект](https://annaradi.github.io/mesto/)

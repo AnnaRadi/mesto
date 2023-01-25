@@ -39,3 +39,6 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
+
+@import url(../blocks/popup-mesto/__container-card/popup-mesto__container-card.css);
+@import url(../blocks/popup-mesto/popup-mesto.css);

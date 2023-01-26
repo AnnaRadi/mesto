@@ -35,10 +35,9 @@
 @import url(../blocks/element/__group-title/element__group-title.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__group-title-like/element__group-title-like.css);
-@import url(../blocks/element/__group-title-images/element__group-title-images.css);
+@import url(../blocks/element/__group-title-like_active/element__group-title-like_active.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
 
 @import url(../blocks/popup-mesto/__container-card/popup-mesto__container-card.css);
-@import url(../blocks/popup-mesto/popup-mesto.css);

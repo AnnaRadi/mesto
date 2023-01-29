@@ -38,6 +38,10 @@
 @import url(../blocks/element/__group-title-like_active/element__group-title-like_active.css);
 @import url(../blocks/element/__group-title-delete/element__group-title-delete.css);
 @import url(../blocks/element/__image-button/element__image-button.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__image-title/popup__image-title.css);
+@import url(../blocks/popup/__images-card/popup__images-card.css);
+@import url(../blocks/popup/__container-close-images/popup__container-close-images.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

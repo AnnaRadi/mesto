@@ -12,7 +12,7 @@ const closeMesto = popupMesto.querySelector('.popup__container-close_mesto');
 const formElement = document.querySelector('.popup__container');
 const formContainerMesto = document.querySelector('.popup-mesto__container-card');
 const popupImages = document.querySelector('.popup-images');
-const template = document.querySelector('#element').content; //нашли Template
+const template = document.querySelector('#element').content; 
 const container = document.querySelector('.elements');
 const titleMesto = document.querySelector('.element__title');
 const imageMesto = document.querySelector('.element__image');
@@ -26,7 +26,7 @@ const imageTitle=popupImages.querySelector('.popup__image-title')
 
 createCards()
 
-function createCards() { //рисуем карточки при загрузке
+function createCards() { 
   const cards= initialCards.map((item) => {
     return  create(item)
 });
@@ -34,7 +34,7 @@ container.append(...cards);
 }
 
 function create(item) {
-  const card = template.querySelector('.element').cloneNode(true);// клонируем содержимое Template (карточку)
+  const card = template.querySelector('.element').cloneNode(true);
   card.querySelector('.element__title').textContent = item.name;
   card.querySelector('.element__image').src = item.link;
   card.querySelector('.element__image').alt=item.name;
@@ -66,17 +66,17 @@ function closePopupImages() {
   closePopup(popupImages);
 }
 
-editButton.addEventListener("click", () => { //открытие редактирования профиля
+editButton.addEventListener("click", () => { 
   openPopup(popupProfile);
   nameInput.value = title.textContent;
   jobInput.value = subtitle.textContent;
 });
 
-closeProfile.addEventListener("click", () => { //закрытие редактирования профиля
+closeProfile.addEventListener("click", () => { 
   closePopup(popupProfile);
 });
 
-formElement.addEventListener('submit', (evt) => { //сохранить редактирования профиля
+formElement.addEventListener('submit', (evt) => { 
   evt.preventDefault();
   title.textContent = nameInput.value;
   subtitle.textContent = jobInput.value;
@@ -84,24 +84,24 @@ formElement.addEventListener('submit', (evt) => { //сохранить реда�
 });
 
 
-addButton.addEventListener("click", () => { //открытие формы добавить карточку
+addButton.addEventListener("click", () => { 
   openPopup(popupMesto);
   formMesto.reset();
 });
 
-closeMesto.addEventListener("click", () => { //закрытие формы добавить карточку
+closeMesto.addEventListener("click", () => { 
   closePopup(popupMesto);
 });
 
-function openPopup(popup) { //общий попап открыть
+function openPopup(popup) { 
   popup.classList.toggle('popup_opened');
 }
 
-function closePopup(popup) { //общий попап закрыть
+function closePopup(popup) { 
   popup.classList.toggle('popup_opened');
 }
 
-formContainerMesto.addEventListener('submit', (evt) => { //добавить карточку (кнопка создать)
+formContainerMesto.addEventListener('submit', (evt) => { 
   evt.preventDefault();
   const name = titleInput.value
   const link = imageInput.value

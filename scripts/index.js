@@ -142,7 +142,7 @@ cardMesto.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const name = inputTitleMesto.value
   const link = inputImageMesto.value
-  const card = create({name:name, link:link});
+  const card = createItemCard({name:name, link:link});
   containerElement.prepend(card);
   closePopup(popupMesto)
 });

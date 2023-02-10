@@ -60,20 +60,42 @@ function create(item) {
   return card;
 }
 
-closeImages.addEventListener("click", closePopupImages)
+document.addEventListener("keydown", keyHandlerEsc);
 
-function closePopupImages() {
-  closePopup(popupImages);
+
+function keyHandlerEsc(evt) {
+  if (evt.key === "Escape") {
+    const openForm=document.querySelector(".popup_opened")
+    closePopup(openForm);
+  }
 }
+
+function closePopup(popup) { 
+  popup.classList.toggle('popup_opened');
+}
+
+popupMesto.addEventListener("click", (e) => {
+  if(e.target===popupMesto || e.target===closeMesto){
+    closePopup(popupMesto);
+  }
+});
+
+popupProfile.addEventListener("click", (e) => {
+  if(e.target===popupProfile || e.target===closeProfile){
+    closePopup(popupProfile);
+  }
+});
+
+popupImages.addEventListener("click", (e) => {
+  if(e.target===popupImages || e.target===closeImages){
+    closePopup(popupImages);
+  }
+})
 
 editButton.addEventListener("click", () => { 
   openPopup(popupProfile);
   nameInput.value = title.textContent;
   jobInput.value = subtitle.textContent;
-});
-
-closeProfile.addEventListener("click", () => { 
-  closePopup(popupProfile);
 });
 
 formElement.addEventListener('submit', (evt) => { 
@@ -87,10 +109,6 @@ formElement.addEventListener('submit', (evt) => {
 addButton.addEventListener("click", () => { 
   openPopup(popupMesto);
   formMesto.reset();
-});
-
-closeMesto.addEventListener("click", () => { 
-  closePopup(popupMesto);
 });
 
 function openPopup(popup) { 

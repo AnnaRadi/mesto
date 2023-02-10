@@ -5,9 +5,9 @@
     font-size: 14px;
     line-height: 17px;
     width: 358px;
-    height:30px;
+    height:25px;
     padding:0;
-    margin: 27px 36px 0 36px;
+    margin: 0 36px 0 36px;
     border: none;
     border-bottom: 1px solid rgba(0,0,0,0.4);
     outline: 0;
@@ -18,6 +18,11 @@
     border: 2px solid #1faee9;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
+
+.popup__container-input.popup__container-input_type_error {
+    border-bottom:1px solid #FF0000;
+}
+
 
 @media (max-width: 600px) {
     .popup__container-input {

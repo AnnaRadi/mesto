@@ -10,12 +10,12 @@ const hideInputError = (input, formError, inputErrorClass) => {
 
 const disableButton = (button, inactiveButtonClass) => {
   button.classList.add(inactiveButtonClass);
-  button.dasabled = true;
+  button.disabled = true;
 };
 
 const enableButton = (button, inactiveButtonClass) => {
   button.classList.remove(inactiveButtonClass);
-  button.dasabled = false;
+  button.disabled = false;
 };
 
 const toggleButtonState = (button, inactiveButtonClass, buttonState) => {
@@ -75,6 +75,5 @@ enableValidation({
   inputSelector: '.popup__container-input',
   inputErrorClass: 'popup__container-input_type_error',
   submitButtonSelector: '.popup__container-button',
-  inactiveButtonClass: 'popup__container-button_disabled',
-  errorClass: 'error__visible'
+  inactiveButtonClass: 'popup__container-button_disabled'
 });

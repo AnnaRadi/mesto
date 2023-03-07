@@ -27,7 +27,6 @@ const formMesto = document.querySelector('.form-mesto');
 const formProfile = document.querySelector('.form');
 const buttonCloseImages = popupImage.querySelector('.popup__container-close-images');
 
-
 const selectors = {
   template: '#element',
   card: '.element',
@@ -38,35 +37,37 @@ const selectors = {
   buttonImage: '.element__image-button'
 }
 
-
-function renderInitialCards(text,image) { 
+function createCard(text,image) {
   const card = new Card ({text, image,
-  likeBtnClickHandler: (event) => {
-    event.target.classList.toggle('element__group-title-like_active');
-    },
-  clickNameHandler: (event) => {
-    event.preventDefault();
-    console.log(event.target);
-    openPopup(popupImage);
-    imageCard.src = event.target.src
-    titleImage.textContent = event.target.closest('.element').querySelector('.element__title').textContent;
-    imageCard.alt = titleImage.textContent;
-    console.log(imageCard.alt);
-  }
-}, selectors);
-  
-  return containerElement.prepend(card.createItemCard());
+    likeBtnClickHandler: (event) => {
+      event.target.classList.toggle('element__group-title-like_active');
+      },
+    clickNameHandler: (event) => {
+      event.preventDefault();
+      console.log(event.target);
+      openPopup(popupImage);
+      imageCard.src = event.target.src
+      titleImage.textContent = event.target.closest('.element').querySelector('.element__title').textContent;
+      imageCard.alt = titleImage.textContent;
+      console.log(imageCard.alt);
+    }
+  }, selectors);
+  return card.createItemCard()
+}
+
+function addCard(name,link) {
+  return containerElement.prepend(createCard(name,link));
 }
 
 initialCards.forEach((item) => {
-  renderInitialCards(item.name, item.link)
+  addCard(item.name, item.link)
 }); 
 
 //==========================================================
-const mestoFormValidation = new FormValidator(config, formMesto);
+const cardFormValidation = new FormValidator(config, formMesto);
 const profileFormValidation = new FormValidator(config, formProfile);
 
-mestoFormValidation.enableValidation();
+cardFormValidation.enableValidation();
 profileFormValidation.enableValidation();
 
 //==========================================================
@@ -99,7 +100,7 @@ buttonEditProfile.addEventListener("click", () => {
   openPopup(popupProfile);
   inputNameProfile.value = titleProfile.textContent;
   inputJobProfile.value = subtitleProfile.textContent;
-  profileFormValidation.enableValidation(); 
+  profileFormValidation.removeValidationErrors();
 });
 
 formElementProfile.addEventListener('submit', (evt) => { 
@@ -109,12 +110,10 @@ formElementProfile.addEventListener('submit', (evt) => {
   closePopup(popupProfile);
 });
 
-
 buttonAddProfile.addEventListener("click", () => { 
   openPopup(popupMesto);
   formMesto.reset();
-  mestoFormValidation.removeValidationErrors();
-  mestoFormValidation.enableValidation();
+  cardFormValidation.removeValidationErrors();
 });
 
 function openPopup(popupGeneral) { 
@@ -131,6 +130,6 @@ formAddCard.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const name = inputTitleMesto.value
   const link = inputImageMesto.value
-  const card = renderInitialCards(name, link);
+  const card = addCard(name, link);
   closePopup(popupMesto)
 });

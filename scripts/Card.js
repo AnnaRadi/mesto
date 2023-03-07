@@ -10,20 +10,29 @@ class Card {
 
       this._buttonDeleteHandle = this._buttonDeleteHandle.bind(this);
     };
-    
-    createItemCard() {
+
+    _getCardTemplate () {
       this._item = Card._template.querySelector(this._selectors.card).cloneNode(true);
+      return this._item;
+    }
+    createItemCard() {
+      this._getCardTemplate ();
       const cardImage = this._item.querySelector(this._selectors.cardImage);
       const cardTitle = this._item.querySelector(this._selectors.title);
-      
-      const buttonLike =  this._item.querySelector(this._selectors.buttonLike);
-      const buttonDeleteCard =  this._item.querySelector(this._selectors.buttonDeleteCard);
-      const buttonImage =  this._item.querySelector(this._selectors.buttonImage);
 
       cardTitle.textContent = this._text;
       cardImage.src = this._image;
       cardImage.alt= this._text;
+      this._setEventListeners();
+      return this._item;
+    }
 
+    _setEventListeners() {
+      
+      const buttonLike =  this._item.querySelector(this._selectors.buttonLike);
+      const buttonDeleteCard =  this._item.querySelector(this._selectors.buttonDeleteCard);
+      const buttonImage =  this._item.querySelector(this._selectors.buttonImage);
+      
       buttonDeleteCard.addEventListener('click', this._buttonDeleteHandle);
 
       buttonLike.addEventListener('click', 
@@ -31,9 +40,6 @@ class Card {
   
       buttonImage.addEventListener('click', 
         this._clickNameHandler);
-    
-
-      return this._item;
     }
 
     _buttonDeleteHandle() {

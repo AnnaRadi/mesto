@@ -64,7 +64,7 @@ class FormValidator {
 
 //=============================  
 
-    removeValidationErrors ()  {
+    resetValidation ()  {
     this._toggleButtonState()
     this._errorClass.forEach((error) => {
        error.textContent = '';

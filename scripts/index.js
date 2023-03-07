@@ -100,7 +100,7 @@ buttonEditProfile.addEventListener("click", () => {
   openPopup(popupProfile);
   inputNameProfile.value = titleProfile.textContent;
   inputJobProfile.value = subtitleProfile.textContent;
-  profileFormValidation.removeValidationErrors();
+  profileFormValidation.resetValidation();
 });
 
 formElementProfile.addEventListener('submit', (evt) => { 
@@ -113,7 +113,7 @@ formElementProfile.addEventListener('submit', (evt) => {
 buttonAddProfile.addEventListener("click", () => { 
   openPopup(popupMesto);
   formMesto.reset();
-  cardFormValidation.removeValidationErrors();
+  cardFormValidation.resetValidation();
 });
 
 function openPopup(popupGeneral) { 

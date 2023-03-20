@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-    <link rel="stylesheet" href="./pages/index.css">
+    <!-- <link rel="stylesheet" href="./pages/index.css"> -->
 </head>
 
 <body class="body">
@@ -23,14 +23,14 @@
                         <div class="profile-info__title-group">
                             <h1 class="profile-info__title">Жак-Ив Кусто</h1>
                             <button class="profile-info__edit-button" type="button">
-                                <img src="./images/Vector.svg" class="profile-info__images" alt="Редактировать">
+                                <img src="<%=require('./images/Vector.svg')%>" class="profile-info__images" alt="Редактировать">
                             </button>
                         </div>
                         <p class="profile-info__subtitle">Исследователь океана</p>                        
                     </div>
                 </div>
                 <button class="profile__add-button" type="button">
-                    <img src="./images/Vector_(1).svg" class="profile__add-button-images" alt="Добавить">
+                    <img src="<%=require('./images/Vector_(1).svg')%>" class="profile__add-button-images" alt="Добавить">
                 </button>
             </section>
             <section class="elements">
@@ -84,10 +84,10 @@
         <div class="popup__images-card">
             <img class="popup__image" alt="Картинка, загружаемая пользователем">
             <h2 class="popup__image-title"></h2>
-            <button class="popup__container-close-images" type="button">
+            <button class="popup__container-close popup__container-close-images" type="button">
             </button>
         </div>
     </div>
-    <script src="./scripts/index.js" type="module"></script>
+    <!-- <script src="./scripts/index.js" type="module"></script> -->
 </body>
 </html>

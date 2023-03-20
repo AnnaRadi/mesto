@@ -16,7 +16,7 @@ class FormValidator {
         this._button.disabled = true;
       };
 
-      _enableButton() {
+    enableButton() {
         this._button.classList.remove(this._inactiveButtonClass);
         this._button.disabled = false;
       }
@@ -26,7 +26,7 @@ class FormValidator {
             this._disableButton()
           }
         else {
-            this._enableButton()
+            this.enableButton()
         }
     }
     

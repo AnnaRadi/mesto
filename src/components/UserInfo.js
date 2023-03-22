@@ -5,12 +5,14 @@ export default class UserInfo {
     }
 
     getUserInfo() {
+        console.log(this._nameUserElement)
         return {
             name: this._nameUserElement.textContent,
-            info: this._informationElement.textContent,
+            link: this._informationElement.textContent,
         }
     }
     setUserInfo({ nameInput, jobInput }) {
+        console.log(this._nameUserElement)
         this._nameUserElement.textContent = nameInput;
         this._informationElement.textContent = jobInput;
         console.log(nameInput, jobInput)

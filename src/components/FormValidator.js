@@ -68,13 +68,6 @@ export class FormValidator {
         this._inputs.forEach((inputError) => {
             this._hideInputError(inputError)
         });
-
-        // this._inputs.forEach((error) => {
-        //    error.textContent = '';
-        // });
-        // this._inputs.forEach((input) => {
-        //   input.classList.remove(this._inputErrorClass);
-        // });
     }
 
     _hasInvalidInput() {

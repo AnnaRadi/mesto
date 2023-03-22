@@ -1,32 +1,31 @@
-import {selectors} from '../utils/constants.js'
+import { selectors } from '../utils/constants.js'
 class Card {
 
-  constructor(data, templateSelector, handleCardClick, openImage) {
+  constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
-    this._templateSelector = templateSelector;
     this._handleCardClick = handleCardClick;
-    this._openImage = openImage;
+    this._templateSelector = templateSelector;
   };
 
   _getCardTemplate() {
-    const item = document.querySelector(this._templateSelector).content.cloneNode(true);
+    const item = document.querySelector(this._templateSelector).content.querySelector(selectors.card).cloneNode(true);
     return item;
   }
-// ==================================
-generateCard() {
-    this._element =this._getCardTemplate();
-    const cardImage = this._element.querySelector(selectors.cardImage);
-    const cardTitle = this._element.querySelector(selectors.title);
+  // ==================================
+  generateCard() {
+    this._element = this._getCardTemplate();
+    this._cardImage = this._element.querySelector(selectors.cardImage);
+    this._cardTitle = this._element.querySelector(selectors.title);
     this._setEventListeners();
 
-    cardTitle.textContent = this._name;
-    cardImage.src = this._link;
-    cardImage.alt = this._name;
+    this._cardTitle.textContent = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
 
     return this._element;
   }
-// ===========
+  // ===========
   _setEventListeners() {
 
     const buttonLike = this._element.querySelector(selectors.buttonLike);
@@ -35,22 +34,21 @@ generateCard() {
       buttonLike.classList.toggle('element__group-title-like_active');
     });
 
-
     const buttonDeleteCard = this._element.querySelector(selectors.buttonDeleteCard);
 
-    buttonDeleteCard.addEventListener('click', () => { 
+    buttonDeleteCard.addEventListener('click', () => {
       console.log(this._element)
-      this._buttonDeleteHandle();
+      this._deleteButtonHandle();
     });
-    
+
     const buttonImage = this._element.querySelector(selectors.buttonImage);
 
     buttonImage.addEventListener('click', () => {
-      this._openImage(this._name, this._link);
+      this._handleCardClick(this._name, this._link);
     });
   }
 
-  _buttonDeleteHandle() {
+  _deleteButtonHandle() {
     console.log(this._element)
     this._element.remove()
   };

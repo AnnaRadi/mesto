@@ -43,3 +43,10 @@ export const selectors = {
   buttonDeleteCard: '.element__group-title-delete',
   buttonImage: '.element__image-button'
 }
+const popupProfile = document.querySelector('.popup-profile');
+export const inputNameProfile = popupProfile.querySelector('.popup__container-input_name_first');
+export const inputJobProfile = popupProfile.querySelector('.popup__container-input_about_you');
+export const buttonEditProfile = document.querySelector('.profile-info__edit-button');
+export const buttonAddProfile = document.querySelector('.profile__add-button');
+export const formMesto = document.querySelector('.form-mesto');
+export const formProfile = document.querySelector('.form');

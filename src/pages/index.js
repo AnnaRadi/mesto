@@ -1,28 +1,29 @@
 import './index.css';
 import Card from '../components/Card.js';
-import { initialCards, config, selectors } from '../utils/constants.js';
+import { initialCards, 
+  config, 
+  selectors,
+  inputNameProfile,
+  inputJobProfile,
+  buttonEditProfile,
+  buttonAddProfile,
+  formMesto,
+  formProfile} from '../utils/constants.js';
 import { FormValidator } from '../components/FormValidator.js';
 import Section from "../components/Section.js";
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 
-const popupProfile = document.querySelector('.popup-profile');
-const inputNameProfile = popupProfile.querySelector('.popup__container-input_name_first');
-const inputJobProfile = popupProfile.querySelector('.popup__container-input_about_you');
-const buttonEditProfile = document.querySelector('.profile-info__edit-button');
-const buttonAddProfile = document.querySelector('.profile__add-button');
-const formMesto = document.forms["form-mesto"];
-const formProfile = document.forms["form-profile"];
-
 const popupShowImage = new PopupWithImage('.popup-images');
 popupShowImage.setEventListeners();
 
 const createCard = (data) => {
-  const templateClass= selectors.template;
+  const templateClass = selectors.template;
   const card = new Card(data, templateClass, (name, link) => {
     popupShowImage.open(name, link);
-  });
+  }
+  );
   const cardElement = card.generateCard();
   return cardElement;
 }
@@ -36,12 +37,12 @@ cardList.renderItems();
 
 buttonAddProfile.addEventListener("click", () => {
   cardPopup.open();
-  formValidators['form-mesto'].resetValidation();
+  cardFormValidation.resetValidation();
 });
 
 const cardPopup = new PopupWithForm('.popup-mesto', (item) => {
   const value = { name: item.nameMesto, link: item.linkPicture };
-  cardList.addItem(createCard(value.name, value.link, selectors.template));
+  cardList.addItem(createCard(value, selectors.template));
   cardPopup.close();
 });
 
@@ -49,7 +50,7 @@ cardPopup.setEventListeners();
 
 //==============================================================================
 
-const userInfo = new UserInfo({ nameUserSelector: '.profile-info__title', informationSelector: '.profile-info__subtitle' });
+const userInfo = new UserInfo({ nameUserElement: '.profile-info__title', informationElement: '.profile-info__subtitle' });
 
 const popupProfileForm = new PopupWithForm('.popup-profile', (value) => {
   console.log(value)
@@ -59,42 +60,22 @@ const popupProfileForm = new PopupWithForm('.popup-profile', (value) => {
 popupProfileForm.setEventListeners();
 
 buttonEditProfile.addEventListener("click", () => {
-  formValidators['form-profile'].resetValidation();
-  // profileFormValidation.enableButton();
+  profileFormValidation.resetValidation();
+  profileFormValidation.enableButton();
   popupProfileForm.open();
-  const { name, info } = userInfo.getUserInfo();
-  console.log(name, info)
+  const { name, link } = userInfo.getUserInfo();
+  console.log(name, link)
   inputNameProfile.value = name;
-  inputJobProfile.value = info;
+  inputJobProfile.value = link;
 });
 
 //==========================================================
 
 
-const formValidators = {}
+const cardFormValidation = new FormValidator(config, formMesto);
+const profileFormValidation = new FormValidator(config, formProfile);
 
-// Включение валидации
-const enableValidation = (config) => {
-  const formList = Array.from(document.querySelectorAll(config.formSelector))
-  formList.forEach((formElement) => {
-    const validator = new FormValidator(config,formElement)
-    // получаем данные из атрибута `name` у формы
-    const formName = formElement.getAttribute('name')
-
-    // вот тут в объект записываем под именем формы
-    formValidators[formName] = validator;
-    validator.enableValidation();
-  });
-};
-
-enableValidation(config);
-
-
-
-// const cardFormValidation = new FormValidator(config, formMesto);
-// const profileFormValidation = new FormValidator(config, formProfile);
-
-// cardFormValidation.enableValidation();
-// profileFormValidation.enableValidation();
+cardFormValidation.enableValidation();
+profileFormValidation.enableValidation();
 
 //==========================================================

@@ -15,4 +15,7 @@ export default class Section {
       this.addItem(card);
     });
   }
+  setItems(items) {
+    this._renderItems = items;
+}
 }

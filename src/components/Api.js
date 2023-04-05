@@ -61,7 +61,7 @@ export class Api {
       }
       return Promise.reject(`Ошибка: ${res.status}`)
     })
-}
+  }
   takeLike(cardId) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'PUT',
@@ -95,5 +95,5 @@ export class Api {
       }
       return Promise.reject(`Ошибка: ${res.status}`)
     })
-}
+  }
 }

@@ -17,5 +17,5 @@ export default class Section {
   }
   setItems(items) {
     this._renderItems = items;
-}
+  }
 }

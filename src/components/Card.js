@@ -1,7 +1,7 @@
 import { selectors } from '../utils/constants.js'
 class Card {
 
-  constructor(data, templateSelector, handleCardClick, userId, like,  dislike, handleDeleteButtonClick) {
+  constructor(data, templateSelector, handleCardClick, userId, like, dislike, handleDeleteButtonClick) {
     this._name = data.name;
     this._link = data.link;
     this._likes = data.likes;
@@ -57,7 +57,7 @@ class Card {
         this._dislike(this._id);
       } else {
         this._like(this._id);
-    } 
+      }
     });
     this._buttonDeleteCard = this._element.querySelector(selectors.buttonDeleteCard);
 
@@ -76,9 +76,9 @@ class Card {
       this._buttonDeleteCard.remove();
     }
   };
-  deleteElement() { 
-    this._element.remove() 
-} 
+  deleteElement() {
+    this._element.remove()
+  }
   handleLikeCard(data) {
     this._likes = data.likes;
     this._countLike.textContent = this._likes.length;

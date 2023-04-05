@@ -149,15 +149,15 @@ buttonEditProfile.addEventListener("click", () => {
 const popupAvatarForm = new PopupWithForm('.popup-avatar', (data) => {
   popupAvatarForm.renderLoading(true);
   api.editProfileAvatar(data)
-  .then((data) => {
-      console.log({ avatar: data.avatar})
-      userInfo.setUserAvatar({ avatar: data.avatar})
+    .then((data) => {
+      console.log({ avatar: data.avatar })
+      userInfo.setUserAvatar({ avatar: data.avatar })
       popupAvatarForm.close();
-  })
-  .catch((err) => {
+    })
+    .catch((err) => {
       console.log(err);
-  })
-  .finally(() => popupAvatarForm.renderLoading(false));
+    })
+    .finally(() => popupAvatarForm.renderLoading(false));
 });
 
 popupAvatarForm.setEventListeners();

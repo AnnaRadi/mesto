@@ -1,5 +1,5 @@
 export default class UserInfo {
-    constructor({ nameUserElement, informationElement,  avatarUserElement}) {
+    constructor({ nameUserElement, informationElement, avatarUserElement }) {
         this._nameUserElement = document.querySelector(nameUserElement);
         this._informationElement = document.querySelector(informationElement);
         this._avatarUserElement = document.querySelector(avatarUserElement);
@@ -23,7 +23,7 @@ export default class UserInfo {
     setUserId(id) {
         this._id = id;
     }
-    
+
     setUserAvatar({ avatar }) {
         this._avatarUserElement.src = avatar;
         console.log(this._avatarUserElement)

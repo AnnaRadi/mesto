@@ -28,6 +28,7 @@ class Card {
     this._cardImage = this._element.querySelector(selectors.cardImage);
     this._cardTitle = this._element.querySelector(selectors.title);
     this._countLike = this._element.querySelector(selectors.countLike);
+    this._buttonLike = this._element.querySelector(selectors.buttonLike);
     this._countLike.textContent = this._likes.length;
     this._setEventListeners();
     this._deleteButtonHandle();
@@ -50,8 +51,6 @@ class Card {
   }
   // ===========
   _setEventListeners() {
-
-    this._buttonLike = this._element.querySelector(selectors.buttonLike);
     this._buttonLike.addEventListener('click', () => {
       if (this._buttonLike.classList.contains('element__group-title-like_active')) {
         this._dislike(this._id);

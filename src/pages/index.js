@@ -29,20 +29,34 @@ const api = new Api({
     authorization: "47a79e91-e1f8-4d50-bfff-9e3aae581f27"
   }
 });
-const cards = api.getAllCards();
-cards.then(data => {
-  cardList.setItems(data);
-  cardList.renderItems();
-})
 
-const profile = api.getUserInfo();
-profile.then((data) => {
-  const { name, about, avatar, _id } = data;
-  userInfo.setUserId(_id);
-  userInfo.setUserInfo({ name, about });
-  userInfo.setUserAvatar({ avatar });
-})
+Promise.all([api.getUserInfo(), api.getAllCards()])
+  .then(([userData, cards]) => {
+    // тут установка данных пользователя
+    // и тут отрисовка карточек
+    const { name, about, avatar, _id } = userData;
+    cardList.setItems(cards);
+    cardList.renderItems();
+    userInfo.setUserId(_id);
+    userInfo.setUserInfo({ name, about });
+    userInfo.setUserAvatar({ avatar });
+  }).catch(err => {
+    console.log(err);
+  });
 
+// const cards = api.getAllCards();
+// cards.then(data => {
+//   cardList.setItems(data);
+//   cardList.renderItems();
+// })
+
+// const profile = api.getUserInfo();
+// profile.then((data) => {
+//   const { name, about, avatar, _id } = data;
+//   userInfo.setUserId(_id);
+//   userInfo.setUserInfo({ name, about });
+//   userInfo.setUserAvatar({ avatar });
+// })
 
 const popupShowImage = new PopupWithImage('.popup-images');
 popupShowImage.setEventListeners();
@@ -130,6 +144,10 @@ const popupProfileForm = new PopupWithForm('.popup-profile', (value) => {
     .then((value) => {
       console.log(value)
       userInfo.setUserInfo(value)
+      popupProfileForm.close();
+    })
+    .catch((err) => {
+      console.log(err);
     })
     .finally(() => popupProfileForm.renderLoading(false));
 });
